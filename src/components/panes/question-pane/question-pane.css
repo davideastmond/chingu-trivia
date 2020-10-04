@@ -1,0 +1,15 @@
+.progress-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.question-text-label {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+.question-pane {
+  margin-top: 0px;
+}

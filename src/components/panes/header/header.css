@@ -1,0 +1,23 @@
+.app-header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+  justify-content: space-evenly;
+}
+
+.header-home,
+.header-questions {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.app-name {
+  margin-left: 0%;
+}
+
+.header-home {
+  align-self: center;
+}
+
+.header-questions {
+  align-self: flex-end;
+}
