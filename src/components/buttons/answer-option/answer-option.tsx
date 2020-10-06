@@ -10,7 +10,7 @@ interface IProps {
 export default function (props: IProps) {
   return (
     <div onClick={() => props.clickCallBackFunction(props.responseId)} className="answer-caption">
-      <p> {props.answerCaption} </p>
+      <p className="centered-answer-option-text"> {props.answerCaption} </p>
     </div>
   )
 }

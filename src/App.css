@@ -1,10 +1,4 @@
-@media only screen and (max-width: 768px) and (orientation: portrait) {
-  body {
-    display: grid;
-  }
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   body .interaction-pane {
     margin-top: 5%;
     margin-left: 15%;
@@ -22,5 +16,23 @@
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     padding: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .feedback-pane {
+    flex-direction: row;
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .feedback-pane {
+    flex-direction: row;
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
   }
 }

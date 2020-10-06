@@ -1,9 +1,10 @@
 import axios from "axios";
+import { QuestionType } from "../definitions/question-type";
 import { Question } from "../interfaces/question";
 import { filterQuestionsByTopic } from "./filter-questions-by-topic";
 const API = process.env.REACT_APP_API_ENDPOINT as string
 
-export async function fetchQuestions(topic?: "html" | "css" | "javascript") {
+export async function fetchQuestions(topic?: QuestionType) {
   const questions = await getQuestionsFromAPI();
 
   if (topic) {

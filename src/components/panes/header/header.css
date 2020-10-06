@@ -12,6 +12,8 @@
 
 .app-name {
   margin-left: 0%;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .header-home {
@@ -20,4 +22,11 @@
 
 .header-questions {
   align-self: flex-end;
+}
+
+@media only screen and (max-width: 768px) {
+  .app-name {
+    font-size: larger;
+    font-weight: bold;
+  }
 }

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 768px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) {
   .answer-caption {
     display: flex;
     width: 100%;
@@ -17,14 +17,17 @@
 @media only screen and (min-width: 769px) {
   .answer-caption {
     display: flex;
-    width: 100%;
     border-color: #666363;
     border-width: 1px;
     border-style: solid;
     box-shadow: 1px 1px 1px #383636;
     justify-content: center;
     width: auto;
+  }
 
+  .centered-answer-option-text {
+    padding: 2%;
+    margin-bottom: 0px;
   }
 
   .answer-caption:hover {

@@ -1,6 +1,11 @@
 import React from "react";
 import "./header.css";
-export default function () {
+
+interface IProps {
+  questionsMenuClickCallBack: (e: any) => void
+}
+export default function (props: IProps) {
+
   return (
     <div className="app-header">
       <div className="app-name">
@@ -9,9 +14,8 @@ export default function () {
       <div className="header-home">
         <p> Home </p>
       </div>
-      <div className="header-questions">
+      <div className="header-questions" onClick={props.questionsMenuClickCallBack}>
         <p> Questions </p>
-
       </div>
     </div>
   )
