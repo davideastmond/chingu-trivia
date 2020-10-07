@@ -26,6 +26,7 @@ The app loads multiple choice and true/false questions and displays them to the 
 - Making this full-stack using back-end API database to keep track of user's progress.
 
 ## Screenshots
-![Mobile mode]()
-![Full mode]()
+![Full](https://github.com/davideastmond/chingu-trivia/blob/main/resources/full-screen-shot.jpg Full)
+![Mobile](https://github.com/davideastmond/chingu-trivia/blob/main/resources/resp-screen-shot.jpg Mobile)
+
 ## Deployment
