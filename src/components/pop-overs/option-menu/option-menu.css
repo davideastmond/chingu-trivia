@@ -69,6 +69,10 @@
   text-align: center;
 }
 
+.question-option:hover {
+  cursor: pointer;
+}
+
 .option-selected {
   background-color: darkgrey;
 }

@@ -13,6 +13,8 @@ import { defaultQuestion } from './scripts/default-question';
 
 import { fetchQuestions } from "./scripts/fetch-questions"
 import { loadSavedQuestionPreference } from './scripts/load-saved-question-prefs';
+import userEvent from '@testing-library/user-event';
+import ResetButton from './components/buttons/reset-button/reset-button';
 
 async function loadQuestions(questionPreference: QuestionType) {
   return fetchQuestions(questionPreference);
@@ -28,31 +30,35 @@ function App() {
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [nextButtonCaption, setNextButtonQuestion] = useState("NEXT");
   const [canAnswerQuestion, setCanAnswerQuestion] = useState(true);
+  const [gameOver, setGameOver] = useState(false)
+
+  async function fetchQuestions() {
+    const questionPreference = loadSavedQuestionPreference();
+    try {
+      const asyncResponse = await loadQuestions(questionPreference as QuestionType);
+      setQuestions(asyncResponse as Question[])
+      setQuestionType(questionPreference);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function refreshQuestions() {
+    const asyncResponse = await loadQuestions(questionType as QuestionType);
+    setQuestions(asyncResponse as Question[])
+  }
 
   useEffect(() => {
-    async function fetchQuestions() {
-      console.log("line 26 render")
-      const questionPreference = loadSavedQuestionPreference();
-      try {
-        const asyncResponse = await loadQuestions(questionPreference as QuestionType);
-        setQuestions(asyncResponse as Question[])
-        setQuestionType(questionPreference);
-        //console.log("31 async current question type", questionPreference)
-      } catch (error) {
-        console.log(error)
-      }
-    }
     fetchQuestions();
   }, [])
 
   useEffect(() => {
-    async function refreshQuestions() {
-      console.log("NEW USE EFFECT is", questionType)
-      const asyncResponse = await loadQuestions(questionType as QuestionType);
-      setQuestions(asyncResponse as Question[])
-    }
     refreshQuestions();
   }, [questionType])
+
+  useEffect(() => {
+    console.log(`${playerScore}| ${questions.length}`)
+  }, [playerScore])
 
   const convertAnswerOptionsToArray = () => {
     return Object.entries(questions[currentQuestionIndex].choices) as any[]
@@ -62,11 +68,13 @@ function App() {
     if (canAnswerQuestion === true) {
       if (responseId === questions[currentQuestionIndex].answer) {
         // Answer is correct
-        setFeedbackMessage("That's correct!")
+        setCanAnswerQuestion(false)
+        setFeedbackMessage("That's correct.")
         setPlayerScore(playerScore + 1)
         setFeedbackButtonsVisible(true)
       } else {
         // Incorrect answer.
+        setCanAnswerQuestion(false)
         setFeedbackMessage("Sorry, that answer is not correct.")
         setFeedbackButtonsVisible(true)
       }
@@ -75,10 +83,18 @@ function App() {
   const handleNextButtonClick = () => {
     // POIJ: fix index out of range issues
     setCanAnswerQuestion(true);
+    setFeedbackButtonsVisible(false);
     if ((currentQuestionIndex + 1) < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
+    } else {
+      setCanAnswerQuestion(false)
+      setGameOver(true)
+      setFeedbackMessage(`Thanks for playing. Your score is ${playerScore}/${questions.length}`);
+      setFeedbackButtonsVisible(true)
     }
   }
+
+
 
   const questionMenuClickHandler = () => {
     setOptionMenuStatus(true);
@@ -89,6 +105,16 @@ function App() {
     if (questionType !== loadSavedQuestionPreference()) {
       setQuestionType(loadSavedQuestionPreference())
     }
+  }
+
+  const clearGameButtonClickHandler = () => {
+    setGameOver(false)
+    setCanAnswerQuestion(true)
+    setFeedbackButtonsVisible(false)
+    setPlayerScore(0)
+    setCurrentQuestionIndex(0)
+    setFeedbackMessage("")
+    fetchQuestions();
   }
 
   return (
@@ -105,8 +131,9 @@ function App() {
           })}
         </div>
         <div className="feedback-pane">
-          <FeedbackMessage messageText={feedbackMessage} />
-          <NextButton buttonText={nextButtonCaption} buttonClickHandler={handleNextButtonClick} />
+          {feedBackButtonsVisible === true && <FeedbackMessage messageText={feedbackMessage} />}
+          {(feedBackButtonsVisible === true && gameOver === false) && <NextButton buttonText={nextButtonCaption} buttonClickHandler={handleNextButtonClick} />}
+          {(feedBackButtonsVisible === true && gameOver === true) && <ResetButton buttonClickHandler={clearGameButtonClickHandler} />}
         </div>
       </div>
     </div>

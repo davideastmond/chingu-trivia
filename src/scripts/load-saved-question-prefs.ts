@@ -8,6 +8,5 @@ export function loadSavedQuestionPreference(): string {
     window.localStorage.setItem("question-type-preference", "all")
     return "all"
   }
-  console.log("Found question preference", result)
   return result
 }

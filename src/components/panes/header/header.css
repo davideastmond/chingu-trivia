@@ -21,12 +21,23 @@
 }
 
 .header-questions {
-  align-self: flex-end;
+  align-self: center;
+}
+
+.header-questions:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
   .app-name {
     font-size: larger;
     font-weight: bold;
+  }
+
+  .app-header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    justify-content: space-evenly;
   }
 }
