@@ -30,5 +30,4 @@ The app loads multiple choice and true/false questions and displays them to the 
 ![Mobile](https://github.com/davideastmond/chingu-trivia/blob/main/resources/resp-screen-shot.jpg)
 
 ## Deployment
-Deployed [here]
-[here]:https://davideastmond.github.io/chingu-trivia/
+Deployed [here](https://davideastmond.github.io/chingu-trivia/)
