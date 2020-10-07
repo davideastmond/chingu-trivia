@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/chingu-trivia/precache-manifest.b2f976e4b8eb59c9f3d0274033ce2846.js"
+  "/chingu-trivia/precache-manifest.a7bc5c1c9a5910de00f112299a2b58d8.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/chingu-trivia/static/css/main.8b3b4765.chunk.css",
-    "main.js": "/chingu-trivia/static/js/main.34efc8a6.chunk.js",
-    "main.js.map": "/chingu-trivia/static/js/main.34efc8a6.chunk.js.map",
+    "main.css": "/chingu-trivia/static/css/main.92f10691.chunk.css",
+    "main.js": "/chingu-trivia/static/js/main.aacea7e1.chunk.js",
+    "main.js.map": "/chingu-trivia/static/js/main.aacea7e1.chunk.js.map",
     "runtime-main.js": "/chingu-trivia/static/js/runtime-main.97ec3d99.js",
     "runtime-main.js.map": "/chingu-trivia/static/js/runtime-main.97ec3d99.js.map",
     "static/js/2.f91fb91d.chunk.js": "/chingu-trivia/static/js/2.f91fb91d.chunk.js",
     "static/js/2.f91fb91d.chunk.js.map": "/chingu-trivia/static/js/2.f91fb91d.chunk.js.map",
     "index.html": "/chingu-trivia/index.html",
-    "precache-manifest.b2f976e4b8eb59c9f3d0274033ce2846.js": "/chingu-trivia/precache-manifest.b2f976e4b8eb59c9f3d0274033ce2846.js",
+    "precache-manifest.a7bc5c1c9a5910de00f112299a2b58d8.js": "/chingu-trivia/precache-manifest.a7bc5c1c9a5910de00f112299a2b58d8.js",
     "service-worker.js": "/chingu-trivia/service-worker.js",
-    "static/css/main.8b3b4765.chunk.css.map": "/chingu-trivia/static/css/main.8b3b4765.chunk.css.map",
+    "static/css/main.92f10691.chunk.css.map": "/chingu-trivia/static/css/main.92f10691.chunk.css.map",
     "static/js/2.f91fb91d.chunk.js.LICENSE.txt": "/chingu-trivia/static/js/2.f91fb91d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.97ec3d99.js",
     "static/js/2.f91fb91d.chunk.js",
-    "static/css/main.8b3b4765.chunk.css",
-    "static/js/main.34efc8a6.chunk.js"
+    "static/css/main.92f10691.chunk.css",
+    "static/js/main.aacea7e1.chunk.js"
   ]
 }

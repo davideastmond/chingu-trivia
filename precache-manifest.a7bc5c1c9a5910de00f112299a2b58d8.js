@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f363e23e8cc3eb0f5f0d1199f9ed8b97",
+    "revision": "ea186be4ba1f25b7b759879b69eb41db",
     "url": "/chingu-trivia/index.html"
   },
   {
-    "revision": "86ee86d60e4a850ee940",
-    "url": "/chingu-trivia/static/css/main.8b3b4765.chunk.css"
+    "revision": "9647a6ee404084e6d0e3",
+    "url": "/chingu-trivia/static/css/main.92f10691.chunk.css"
   },
   {
     "revision": "19c53b28c313b562341b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chingu-trivia/static/js/2.f91fb91d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "86ee86d60e4a850ee940",
-    "url": "/chingu-trivia/static/js/main.34efc8a6.chunk.js"
+    "revision": "9647a6ee404084e6d0e3",
+    "url": "/chingu-trivia/static/js/main.aacea7e1.chunk.js"
   },
   {
     "revision": "e1ad8f1f6e5d0a916da1",
