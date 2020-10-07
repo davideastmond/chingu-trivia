@@ -27,7 +27,7 @@ function App() {
   const [questionType, setQuestionType] = useState(loadSavedQuestionPreference());
   const [playerScore, setPlayerScore] = useState(0);
   const [feedBackButtonsVisible, setFeedbackButtonsVisible] = useState(false);
-  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState({ message: "", color: "feedback-message-black" });
   const [nextButtonCaption, setNextButtonQuestion] = useState("NEXT");
   const [canAnswerQuestion, setCanAnswerQuestion] = useState(true);
   const [gameOver, setGameOver] = useState(false)
@@ -54,7 +54,7 @@ function App() {
     setFeedbackButtonsVisible(false)
     setPlayerScore(0)
     setCurrentQuestionIndex(0)
-    setFeedbackMessage("")
+    setFeedbackMessage({ message: "", color: "feedback-message-black" })
     fetchQuestions();
   }
 
@@ -79,13 +79,13 @@ function App() {
       if (responseId === questions[currentQuestionIndex].answer) {
         // Answer is correct
         setCanAnswerQuestion(false)
-        setFeedbackMessage("That's correct.")
+        setFeedbackMessage({ message: "That's correct.", color: "feedback-message-correct" })
         setPlayerScore(playerScore + 1)
         setFeedbackButtonsVisible(true)
       } else {
         // Incorrect answer.
         setCanAnswerQuestion(false)
-        setFeedbackMessage("Sorry, that answer is not correct.")
+        setFeedbackMessage({ message: "Sorry, that answer is not correct.", color: "feedback-message-wrong" })
         setFeedbackButtonsVisible(true)
       }
     }
@@ -99,7 +99,7 @@ function App() {
     } else {
       setCanAnswerQuestion(false)
       setGameOver(true)
-      setFeedbackMessage(`Thanks for playing. Your score is ${playerScore}/${questions.length}`);
+      setFeedbackMessage({ message: `Thanks for playing. Your score is ${playerScore}/${questions.length}`, color: "feedback-message-black" });
       setFeedbackButtonsVisible(true)
     }
   }
@@ -137,7 +137,7 @@ function App() {
           })}
         </div>
         <div className="feedback-pane">
-          {feedBackButtonsVisible === true && <FeedbackMessage messageText={feedbackMessage} />}
+          {feedBackButtonsVisible === true && <FeedbackMessage messageOptions={{ messageText: feedbackMessage.message, cssClass: feedbackMessage.color }} />}
           {(feedBackButtonsVisible === true && gameOver === false) && <NextButton buttonText={nextButtonCaption} buttonClickHandler={handleNextButtonClick} />}
           {(feedBackButtonsVisible === true && gameOver === true) && <ResetButton buttonClickHandler={clearGameButtonClickHandler} />}
         </div>

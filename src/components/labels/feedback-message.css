@@ -1,7 +1,11 @@
-.correct-answer {
-  color: green;
+.feedback-message-correct {
+  color: lime;
 }
 
-.wrong-answer {
+.feedback-message-wrong {
   color: orangered;
+}
+
+.feedback-message-black {
+  color: blue;
 }
