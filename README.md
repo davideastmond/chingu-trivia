@@ -19,9 +19,13 @@ The app loads multiple choice and true/false questions and displays them to the 
 
 ## Features
 - Users can filter questions by topic (html, css, javascript or all types).
+  - Click the `questions` menu at the top and select your desired question type Then click `close`.
 - CSS responsive
 
 ## Planned features
 - Making this full-stack using back-end API database to keep track of user's progress.
 
+## Screenshots
+![Mobile mode]()
+![Full mode]()
 ## Deployment
