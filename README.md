@@ -27,6 +27,6 @@ The app loads multiple choice and true/false questions and displays them to the 
 
 ## Screenshots
 ![Full](https://github.com/davideastmond/chingu-trivia/blob/main/resources/full-screen-shot.jpg)
-![Mobile](https://github.com/davideastmond/chingu-trivia/blob/main/resources/resp-screen-shot.jpg)
+![Mobile](https://github.com/davideastmond/chingu-trivia/blob/main/resources/resp-screen-shot.jpg =50x)
 
 ## Deployment
