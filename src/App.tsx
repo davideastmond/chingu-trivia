@@ -48,6 +48,16 @@ function App() {
     setQuestions(asyncResponse as Question[])
   }
 
+  const resetGame = () => {
+    setGameOver(false)
+    setCanAnswerQuestion(true)
+    setFeedbackButtonsVisible(false)
+    setPlayerScore(0)
+    setCurrentQuestionIndex(0)
+    setFeedbackMessage("")
+    fetchQuestions();
+  }
+
   useEffect(() => {
     fetchQuestions();
   }, [])
@@ -102,19 +112,15 @@ function App() {
 
   const questionMenuCloseButtonClickHandler = () => {
     setOptionMenuStatus(false);
+    // If user changes their question type, reset everything
     if (questionType !== loadSavedQuestionPreference()) {
       setQuestionType(loadSavedQuestionPreference())
+      resetGame();
     }
   }
 
   const clearGameButtonClickHandler = () => {
-    setGameOver(false)
-    setCanAnswerQuestion(true)
-    setFeedbackButtonsVisible(false)
-    setPlayerScore(0)
-    setCurrentQuestionIndex(0)
-    setFeedbackMessage("")
-    fetchQuestions();
+    resetGame()
   }
 
   return (

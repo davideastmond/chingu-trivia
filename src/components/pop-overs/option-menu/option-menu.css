@@ -80,3 +80,7 @@
 .option-header {
   text-align: center;
 }
+
+.options-close-window:hover {
+  cursor: pointer;
+}
