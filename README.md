@@ -18,7 +18,9 @@ The app loads multiple choice and true/false questions and displays them to the 
 - bootstrap
 
 ## Features
-- Users can filter questions by topic (html, css, javascript or all types).
+- Users can complete a ten-question quiz on the topic of web development.
+- The question order is randomized after being fetched from the API
+- Users can filter questions by topic (html, css, javascript or all topics).
   - Click the `questions` menu at the top and select your desired question type Then click `close`.
 - CSS responsive
 
