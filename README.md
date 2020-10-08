@@ -1,7 +1,7 @@
 # Chingu Trivia app
 
 ## About
-This is a quiz app as the requirements of the Chingu voyage solo project (tier-2).
+This is a quiz app as per the requirements of the Chingu voyage solo project (tier-2).
 
 The app loads multiple choice and true/false questions and displays them to the user. At the end of the ten-question quiz, it displays the user's results and allows the user to reset the game.
 

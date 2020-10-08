@@ -66,10 +66,6 @@ function App() {
     refreshQuestions();
   }, [questionType])
 
-  useEffect(() => {
-    console.log(`${playerScore}| ${questions.length}`)
-  }, [playerScore])
-
   const convertAnswerOptionsToArray = () => {
     return Object.entries(questions[currentQuestionIndex].choices) as any[]
   }
@@ -103,8 +99,6 @@ function App() {
       setFeedbackButtonsVisible(true)
     }
   }
-
-
 
   const questionMenuClickHandler = () => {
     setOptionMenuStatus(true);
