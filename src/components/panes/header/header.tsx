@@ -7,7 +7,7 @@ interface IProps {
 export default function (props: IProps) {
 
   return (
-    <div className="app-header">
+    <nav className="app-header">
       <div className="app-name">
         <p>CHINGU TRIVIA</p>
       </div>
@@ -17,6 +17,6 @@ export default function (props: IProps) {
       <div className="header-questions" onClick={props.questionsMenuClickCallBack}>
         <p> Questions </p>
       </div>
-    </div>
+    </nav>
   )
 }
